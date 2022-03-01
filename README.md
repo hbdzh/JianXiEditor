@@ -5,7 +5,7 @@
   简兮编辑器
 </h1>
 <p align="center">
-  WPF开发的代码编辑器。
+  一个WPF开发的代码编辑器，支持Windows7以上系统
 </p>
 <p align="center">
   <a style="text-decoration:none">
@@ -18,6 +18,7 @@
     <img src="Images/technology.svg" alt="Technology" />
   </a>
 </p>
+
 
 
 
@@ -36,7 +37,7 @@
 * 历史打开文件
 * ……
 
-## 软件截图:
+## 软件截图
 
 ![01](Images/01.jpg)
 
@@ -44,7 +45,7 @@
 
 ![03](Images/03.jpg)
 
-## 快捷键:
+## 快捷键
 
 * Ctrl+N：新建文件
 * Ctrl+O：打开文件
@@ -71,3 +72,4 @@
 * Ctrl+Shift+X：剪切并删除行
 * Alt+F：跳转到相同内容
 * Alt+MouseLeft：块选择
+* ……
