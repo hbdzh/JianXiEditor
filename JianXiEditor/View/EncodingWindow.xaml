@@ -1,0 +1,78 @@
+﻿<hc:Window
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    x:Class="JianXiEditor.View.EncodingWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:JianXiEditor.View"
+    mc:Ignorable="d"
+    DataContext="{StaticResource ShareEncodingViewModel}"
+    Name="EncodeWindow"
+    Title="编码格式"
+    Height="auto"
+    Width="230"
+    SizeToContent="Height"
+    Background="{DynamicResource MainContentBackgroundBrush}"
+    BorderThickness="0"
+    ShowTitle="False"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner"
+    ShowNonClientArea="False">
+    <DockPanel>
+        <hc:SimplePanel
+            DockPanel.Dock="Top"
+            Height="38">
+            <Border
+                SnapsToDevicePixels="True"
+                BorderBrush="{DynamicResource MainShadow}"
+                BorderThickness="0,0,0,1.2">
+                <Border.Effect>
+                    <DropShadowEffect
+                        Color="{DynamicResource MainEffect}"
+                        BlurRadius="10"
+                        ShadowDepth="0"
+                        Opacity="1" />
+                </Border.Effect>
+            </Border>
+            <Border
+                Background="{DynamicResource MainContentBackgroundBrush}"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                hc:WindowAttach.IsDragElement="True" />
+            <TextBlock
+                Text="编码格式"
+                FontSize="18"
+                Margin="10,0,0,0"
+                hc:WindowAttach.IsDragElement="True"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left" />
+            <Button
+                ToolTip="关闭"
+                HorizontalAlignment="Right"
+                FontFamily="{StaticResource IconFont}"
+                Style="{StaticResource ControlButton}"
+                Command="hc:ControlCommands.CloseWindow"
+                CommandParameter="{Binding RelativeSource={RelativeSource Self}}" />
+        </hc:SimplePanel>
+        <ComboBox
+            Name="EncodingComboBox"
+            FocusManager.FocusedElement="{Binding ElementName=EncodingComboBox}"
+            Margin="30,20"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Stretch"
+            hc:DropDownElement.ConsistentWidth="True"
+            ItemsSource="{Binding EncodingM.EncodingList}"
+            SelectedItem="{Binding EncodingM.SelectEncoding}"
+            Style="{StaticResource ComboBoxExtend}">
+            <hc:Interaction.Triggers>
+                <hc:EventTrigger
+                    EventName="SelectionChanged">
+                    <hc:InvokeCommandAction
+                        Command="{Binding SelectEncodingCommand}" />
+                </hc:EventTrigger>
+            </hc:Interaction.Triggers>
+        </ComboBox>
+    </DockPanel>
+</hc:Window>

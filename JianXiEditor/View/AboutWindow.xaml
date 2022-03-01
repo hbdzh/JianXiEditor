@@ -1,0 +1,497 @@
+﻿<hc:Window
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    x:Class="JianXiEditor.View.AboutWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:JianXiEditor.View"
+    mc:Ignorable="d"
+    DataContext="{StaticResource ShareEncodingViewModel}"
+    Name="AbWindow"
+    Title="关于"
+    Height="auto"
+    Width="auto"
+    MaxHeight="240"
+    MinHeight="210"
+    MaxWidth="350"
+    MinWidth="320"
+    SizeToContent="WidthAndHeight"
+    Background="{DynamicResource MainContentBackgroundBrush}"
+    BorderThickness="0"
+    ShowTitle="False"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner"
+    ShowNonClientArea="False">
+    <DockPanel>
+        <hc:SimplePanel
+            DockPanel.Dock="Top"
+            Height="38">
+            <Border
+                SnapsToDevicePixels="True"
+                BorderBrush="{DynamicResource MainShadow}"
+                BorderThickness="0,0,0,1.2">
+                <Border.Effect>
+                    <DropShadowEffect
+                        Color="{DynamicResource MainEffect}"
+                        BlurRadius="10"
+                        ShadowDepth="0"
+                        Opacity="1" />
+                </Border.Effect>
+            </Border>
+            <Border
+                Background="{DynamicResource MainContentBackgroundBrush}"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                hc:WindowAttach.IsDragElement="True" />
+            <TextBlock
+                Text="关于"
+                FontSize="18"
+                Margin="10,0,0,0"
+                hc:WindowAttach.IsDragElement="True"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left" />
+            <Button
+                ToolTip="关闭"
+                HorizontalAlignment="Right"
+                FontFamily="{StaticResource IconFont}"
+                Style="{StaticResource ControlButton}"
+                Command="hc:ControlCommands.CloseWindow"
+                CommandParameter="{Binding RelativeSource={RelativeSource Self}}" />
+        </hc:SimplePanel>
+        <StackPanel
+            Margin="20">
+            <StackPanel
+                Orientation="Horizontal">
+                <Viewbox
+                    Height="128"
+                    Width="128"
+                    Stretch="Fill">
+                    <Canvas
+                        Name="svg10"
+                        Width="333.33334"
+                        Height="333.33334">
+                        <Canvas.RenderTransform>
+                            <TranslateTransform
+                                X="0"
+                                Y="0" />
+                        </Canvas.RenderTransform>
+                        <Canvas.Resources>
+                            <PathGeometry
+                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                x:Key="clipPath26"
+                                Figures="M 0 250 H 250 V 0 H 0 Z"
+                                FillRule="NonZero" />
+                            <PathGeometry
+                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                x:Key="clipPath34"
+                                Figures="M 20 245.435 H 230 V -5.56522 H 20 Z"
+                                FillRule="NonZero" />
+                            <PathGeometry
+                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                x:Key="clipPath38"
+                                Figures="M 20 245.435 H 230 V -5.56522 H 20 Z"
+                                FillRule="NonZero" />
+                            <!--Unknown tag: mask-->
+                            <!--Unknown tag: mask-->
+                            <PathGeometry
+                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                x:Key="clipPath80"
+                                Figures="M 35.0658 141.432 H 136.066 V 40.4319 H 35.0658 Z"
+                                FillRule="NonZero" />
+                            <PathGeometry
+                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                x:Key="clipPath84"
+                                Figures="M 35.0658 141.432 H 136.066 V 40.4319 H 35.0658 Z"
+                                FillRule="NonZero" />
+                            <!--Unknown tag: mask-->
+                            <!--Unknown tag: mask-->
+                            <PathGeometry
+                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                x:Key="clipPath126"
+                                Figures="M 35.0658 175.432 H 136.066 V 74.4319 H 35.0658 Z"
+                                FillRule="NonZero" />
+                            <PathGeometry
+                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                x:Key="clipPath130"
+                                Figures="M 35.0658 175.432 H 136.066 V 74.4319 H 35.0658 Z"
+                                FillRule="NonZero" />
+                            <!--Unknown tag: mask-->
+                            <!--Unknown tag: mask-->
+                            <PathGeometry
+                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                x:Key="clipPath172"
+                                Figures="M 89.0658 105.432 H 215.066 V 41.4319 H 89.0658 Z"
+                                FillRule="NonZero" />
+                            <PathGeometry
+                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                x:Key="clipPath176"
+                                Figures="M 89.0658 105.432 H 215.066 V 41.4319 H 89.0658 Z"
+                                FillRule="NonZero" />
+                            <!--Unknown tag: mask-->
+                            <!--Unknown tag: mask-->
+                            <PathGeometry
+                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                x:Key="clipPath218"
+                                Figures="m 29 237.435 h 192 v -54 H 29 Z"
+                                FillRule="NonZero" />
+                            <PathGeometry
+                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                x:Key="clipPath222"
+                                Figures="m 29 237.435 h 192 v -54 H 29 Z"
+                                FillRule="NonZero" />
+                            <!--Unknown tag: mask-->
+                            <!--Unknown tag: mask-->
+                        </Canvas.Resources>
+                        <!--Unknown tag: metadata-->
+                        <!--Unknown tag: sodipodi:namedview-->
+                        <Canvas
+                            Name="g18">
+                            <Canvas.RenderTransform>
+                                <MatrixTransform
+                                    Matrix="1.3333333 0 0 -1.3333333 0 333.33333" />
+                            </Canvas.RenderTransform>
+                            <Canvas
+                                Name="g20">
+                                <Canvas
+                                    Name="g22"
+                                    Clip="{StaticResource clipPath26}">
+                                    <Canvas
+                                        Name="g28">
+                                        <Canvas
+                                            Name="g30" />
+                                        <Canvas
+                                            Name="g68">
+                                            <Canvas
+                                                Name="g66"
+                                                Clip="{StaticResource clipPath34}">
+                                                <Canvas
+                                                    Name="g64">
+                                                    <Canvas
+                                                        Name="g56" />
+                                                    <Canvas
+                                                        Name="g62">
+                                                        <Canvas
+                                                            Name="g60">
+                                                            <Canvas.RenderTransform>
+                                                                <MatrixTransform
+                                                                    Matrix="210 0 0 251 20 -5.5652161" />
+                                                            </Canvas.RenderTransform>
+                                                            <Image
+                                                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                                                Name="image58"
+                                                                Source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAD7CAYAAAAfOsq8AAAABHNCSVQICAgIfAhkiAAAA7BJREFUeJzt2sFuozAUQNFh1P//ZbqoWpGUEAgXNQnn7CO88NWzrQzjOI7/gF3+//UC4B18HP2BYRiO/gTcdfTBKw9JODyj631Zh5WFJCBeyfd+rYLaHZKAeGVVUA+HJCDeyd6gNockIN7Zo0Ftev4WEWexda+vDklEnM2WPb8qJBFxVmv3/t2QRMTZrWlgMSQRwZd7LfivHQRuhmQawaWlJmZDEhHMu9WGox0EfoVkGsGyuUZMJAgICQIXITnWwTrXrZhIEBASBIQEgZ+Q3I9gm2kzJhIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEgZ+QxnH8y3XAy5k2YyJBQEgQEBIELkJyT4J1rlsxkSDwKyRTCZbNNWIiQWA2JFMJ5t1qw0SCwM2QTCW4tNSEiQSBxZBMJfhyr4W7E0lMnN2aBlYd7cTEWa3d+6vvSGLibLbs+U2PDWLiLLbu9Y9HPzAMw9afwtN7dFhsDun6g4LiHew9bT0c0vUCBMUrqq4ru0P6Nl2QqHhmR9z1s5CmRMWzOfqh7JCQprz0cQb+aweBT6/edQdsVIEnAAAAAElFTkSuQmCC"
+                                                                Width="1"
+                                                                Height="1"
+                                                                Stretch="Fill">
+                                                                <Image.RenderTransform>
+                                                                    <MatrixTransform
+                                                                        Matrix="1 0 0 -1 0 1" />
+                                                                </Image.RenderTransform>
+                                                            </Image>
+                                                        </Canvas>
+                                                    </Canvas>
+                                                </Canvas>
+                                            </Canvas>
+                                        </Canvas>
+                                    </Canvas>
+                                    <Canvas
+                                        Name="g70">
+                                        <Canvas.RenderTransform>
+                                            <TranslateTransform
+                                                X="200"
+                                                Y="15" />
+                                        </Canvas.RenderTransform>
+                                        <Path
+                                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                            Name="path72"
+                                            Fill="#FF444444">
+                                            <Path.Data>
+                                                <PathGeometry
+                                                    Figures="m 0 0 h -150 c -8.284 0 -15 6.716 -15 15 v 190 c 0 8.284 6.716 15 15 15 H 0 c 8.284 0 15 -6.716 15 -15 V 15 C 15 6.716 8.284 0 0 0"
+                                                    FillRule="NonZero" />
+                                            </Path.Data>
+                                        </Path>
+                                    </Canvas>
+                                    <Canvas
+                                        Name="g74">
+                                        <Canvas
+                                            Name="g76" />
+                                        <Canvas
+                                            Name="g114">
+                                            <Canvas
+                                                Name="g112"
+                                                Clip="{StaticResource clipPath80}">
+                                                <Canvas
+                                                    Name="g110">
+                                                    <Canvas
+                                                        Name="g102" />
+                                                    <Canvas
+                                                        Name="g108">
+                                                        <Canvas
+                                                            Name="g106">
+                                                            <Canvas.RenderTransform>
+                                                                <MatrixTransform
+                                                                    Matrix="101 0 0 101 35.065796 40.431885" />
+                                                            </Canvas.RenderTransform>
+                                                            <Image
+                                                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                                                Name="image104"
+                                                                Source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGUAAABlCAYAAABUfC3PAAAABHNCSVQICAgIfAhkiAAAArRJREFUeJzt3dFy6yAMRVH5Tv//l92HO7Se1DYIJHQEZ783Aa8hzrQ1HOd5nsKg+hc9APY3ogBGFMCIAthX9AAiOo5D/TMzvw8tj9ID0PI6nkjLolhh1F7fA2c5FG+Mp/ezxFkGZTbG0/tb4KT/9nUcRzjINYuxpEZBwrg2Oq60KKggpZHxpURBByn1jjMVCtr9o6We8aZByYZxTTv2FCiZQUqaOcCjrABSap0LNMpKIJpgUVYFaZkXJMqqIK3BoewAUpsjFMoOIC3BoBDkNwiUHUHe5hyOsiNIrVAUgtwXhkKQ50JQCPK/p+swHYUg9aaiEKStaSgEaW8KCkF0uaMQRJ8rCkH6ckMhSH8uKAQZyxyFIOOZohDEJjMUguh7+g99ExSC2DaMQhD7hlAI4lM3CkHGenviqwuFIL6F/42e/U2NwlUyXu1hVRUKQebUjEIQm1oe6W5CIcjceKOfWOvGB1UUrpL5caVMSrM9yCsKV4lN2v1auFKc69lAhyiO9e5o9IjCj664uFKcGtn3iygOjW7ERhTj3HbG4/2kL6t9JLlSjLLc2JMoBllvg0uUwTz2JSbKQF67eBOlM89t1YnSkfdhBERRNuN0CKIomnVcB1Eam3l+ClEamn3AH1EqRZy4SJSXoo7AJMpDkWeSEuWm6ENib1GiBxUZwty5Ui4hgIgQ5ScUEBGiiAgWiMgLCtpAvUKc59YrBRFEpIKCOmiLkOe25UpBBhFpQEGfgLYM89lqpWQAEWlEyTKZtzLNoXmlZJrUZ9nGrvr4yjY5kZxjVt9TskzyPM80Y/2s60aPPln08dXq/vaFOnHUcWka+kqMdgHQxtPb1+gLlAsR+UzLKhilYZRSBM5qGCUzlJI3zqoQ18xRSncXrwdqB4TP3FDu2vEC97TVLySzRBTAiAIYUQD7Bl2f1toMm2vtAAAAAElFTkSuQmCC"
+                                                                Width="1"
+                                                                Height="1"
+                                                                Stretch="Fill">
+                                                                <Image.RenderTransform>
+                                                                    <MatrixTransform
+                                                                        Matrix="1 0 0 -1 0 1" />
+                                                                </Image.RenderTransform>
+                                                            </Image>
+                                                        </Canvas>
+                                                    </Canvas>
+                                                </Canvas>
+                                            </Canvas>
+                                        </Canvas>
+                                    </Canvas>
+                                    <Canvas
+                                        Name="g116">
+                                        <Canvas.RenderTransform>
+                                            <TranslateTransform
+                                                X="109.69"
+                                                Y="104.3493" />
+                                        </Canvas.RenderTransform>
+                                        <Path
+                                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                            Name="path118"
+                                            Fill="#FFF2F2F2">
+                                            <Path.Data>
+                                                <PathGeometry
+                                                    Figures="m 0 0 -37.762 -37.762 c -1.953 -1.953 -5.119 -1.953 -7.071 0 l -3.982 3.981 c -1.952 1.952 -1.952 5.118 0 7.071 l 37.763 37.762 c 1.952 1.953 5.118 1.953 7.071 0 L 0 7.071 C 1.953 5.118 1.953 1.953 0 0"
+                                                    FillRule="NonZero" />
+                                            </Path.Data>
+                                        </Path>
+                                    </Canvas>
+                                    <Canvas
+                                        Name="g120">
+                                        <Canvas
+                                            Name="g122" />
+                                        <Canvas
+                                            Name="g160">
+                                            <Canvas
+                                                Name="g158"
+                                                Clip="{StaticResource clipPath126}">
+                                                <Canvas
+                                                    Name="g156">
+                                                    <Canvas
+                                                        Name="g148" />
+                                                    <Canvas
+                                                        Name="g154">
+                                                        <Canvas
+                                                            Name="g152">
+                                                            <Canvas.RenderTransform>
+                                                                <MatrixTransform
+                                                                    Matrix="101 0 0 101 35.065796 74.431885" />
+                                                            </Canvas.RenderTransform>
+                                                            <Image
+                                                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                                                Name="image150"
+                                                                Source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGUAAABlCAYAAABUfC3PAAAABHNCSVQICAgIfAhkiAAAAqxJREFUeJzt3dFugzAMhWEz7f1fubvYkKqOgJPYzrFz/vutSb8aKEza8Xq9XsKg+lq9APY/ogBGFMCIAth35Isdx9H9Mzteh7iijCBofkd1KBcUCwzN76+KY4rijdF6vWo4JijRGK3Xr4IzffW1GuS94zig1jPaFArqG4C6Lm3DKOgbR1/fXUMoWTacZZ2fdaNk22jG80wXSrbNvZdp7WqUTJtqlWUPKpQsm9GUYS9b3iVGh3lEQd/AaMj72nJSzlBhblFQF20Z4h63npQzNBii/IUE00RBWmRUKHvmpHyEAEOUi1bDEKXRSphLlNWfFJRWvQ+clIdWwBBFUTQMUZRFwhCloygYonQWAUOUgbxhiDKYJwxRJvKCIcpkHjBEMcga5hKlyl+vR2YJw0kxzAqGKMZZwBDFoVmYJgrPK3PNwHBSACOKY6PTcovCQ9h8IzCclIB6YR5ROC029cBwUgBToXBabNJOCycFMDUKp8UmzbR0TQphYuo+fBFmvqdpGTqnEMY3nugXdTctwyicFr+mJoUwPk0fvghjn8k5hTC2mZ3oCdNf62RvevVFGJvML4kJM5/L9xTCzOX25ZEw47l+oyfMWO63WQjTX8i9L8L0FXZDkjD6Qu8SE0ZX+K17wjy35HkKYe5b9pCLMO2WPnncHaa1/+WPg3eHuWo5ighhPoNAESHMezAoInvB3O0VCkVkL5hWcCgi9WGe9geJIlIf5i5YFJGaMJo9QaOI1IR5Ch5FpA6Mdh8pUETyw/SsPw2KSH4YbalQRHLC9K45HYrI7yaz4IysMyXKGTrM6PpSo4hgwsxOcnoUEazDmcU6vg3WAdP5hqz49xqWH4pSKGeROB4TWhLlzBPH83BZGuXs6g3sgYo+X22BchXKhcFVJa6+qkUUwIgCGFEA+wFoxdzUJIQzNAAAAABJRU5ErkJggg=="
+                                                                Width="1"
+                                                                Height="1"
+                                                                Stretch="Fill">
+                                                                <Image.RenderTransform>
+                                                                    <MatrixTransform
+                                                                        Matrix="1 0 0 -1 0 1" />
+                                                                </Image.RenderTransform>
+                                                            </Image>
+                                                        </Canvas>
+                                                    </Canvas>
+                                                </Canvas>
+                                            </Canvas>
+                                        </Canvas>
+                                    </Canvas>
+                                    <Canvas
+                                        Name="g162">
+                                        <Canvas.RenderTransform>
+                                            <TranslateTransform
+                                                X="99.1037"
+                                                Y="100.5927" />
+                                        </Canvas.RenderTransform>
+                                        <Path
+                                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                            Name="path164"
+                                            Fill="#FFE6E6E6">
+                                            <Path.Data>
+                                                <PathGeometry
+                                                    Figures="m 0 0 -37.762 37.762 c -1.953 1.953 -1.953 5.119 0 7.072 l 3.981 3.981 c 1.952 1.952 5.118 1.952 7.071 0 L 11.052 11.052 c 1.953 -1.952 1.953 -5.118 0 -7.071 L 7.071 0 C 5.118 -1.953 1.953 -1.953 0 0"
+                                                    FillRule="NonZero" />
+                                            </Path.Data>
+                                        </Path>
+                                    </Canvas>
+                                    <Canvas
+                                        Name="g166">
+                                        <Canvas
+                                            Name="g168" />
+                                        <Canvas
+                                            Name="g206">
+                                            <Canvas
+                                                Name="g204"
+                                                Clip="{StaticResource clipPath172}">
+                                                <Canvas
+                                                    Name="g202">
+                                                    <Canvas
+                                                        Name="g194" />
+                                                    <Canvas
+                                                        Name="g200">
+                                                        <Canvas
+                                                            Name="g198">
+                                                            <Canvas.RenderTransform>
+                                                                <MatrixTransform
+                                                                    Matrix="126 0 0 64 89.065796 41.431892" />
+                                                            </Canvas.RenderTransform>
+                                                            <Image
+                                                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                                                Name="image196"
+                                                                Source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAABACAYAAADcU8NVAAAABHNCSVQICAgIfAhkiAAAAZFJREFUeJzt3V1uwjAQRtGmYv9bdh8qJAR2/M+M57tnA0lzPUkQKr5SSukHcn6tTwA2CC/qYXXg67qsDu2OxdN2e3gC1+Wu0e7FsCU8see9X8PVC2FpeILv87y2qxbAkvAE/55VC2AqPMHtzC6A4Y9zRPdhtMNQeKL7MtKjOzzRfert0hWe6L719GkOT/QztHZqCk/0s7T0qoYnekx8OxdUbWBvwzPtcTHxgd0NbjE80x4bEy+K8MGV7tzZ8Nzm42PiRRFeFOEF5B7dH+F5vmtg4kURXhThRRFeFOFFEV4U4UURXhThRRFeFOFFfYTnR7DiyTVl4kURXhThRWXD85yPj4kPrjTEhBdVDM/tPjYmPrC74b0Nz9THxcQHVRvaanim/jwtzZomnvjxNN/qiX+G1k5dz3ji+9bTp/vljvg+9XYZeqsnvi8jPYY/zhHfXkrp+z9bPntgzDHdqOD9JPgX6/1cbU3yxALYY8dddcsuVK8nyiIYc+T2Y69KfwAL4p/VO5LZTpO8FNri2zlRhBf1BwyifIYnMlWiAAAAAElFTkSuQmCC"
+                                                                Width="1"
+                                                                Height="1"
+                                                                Stretch="Fill">
+                                                                <Image.RenderTransform>
+                                                                    <MatrixTransform
+                                                                        Matrix="1 0 0 -1 0 1" />
+                                                                </Image.RenderTransform>
+                                                            </Image>
+                                                        </Canvas>
+                                                    </Canvas>
+                                                </Canvas>
+                                            </Canvas>
+                                        </Canvas>
+                                    </Canvas>
+                                    <Canvas
+                                        Name="g208">
+                                        <Canvas.RenderTransform>
+                                            <TranslateTransform
+                                                X="118.9492"
+                                                Y="81.1863" />
+                                        </Canvas.RenderTransform>
+                                        <Path
+                                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                            Name="path210"
+                                            Fill="#FFF2F2F2">
+                                            <Path.Data>
+                                                <PathGeometry
+                                                    Figures="m 0 0 h 66.566 c 2.801 0 5.072 -2.271 5.072 -5.072 v -5.198 c 0 -2.802 -2.271 -5.073 -5.072 -5.073 H 0 c -2.801 0 -5.072 2.271 -5.072 5.073 v 5.198 C -5.072 -2.271 -2.801 0 0 0"
+                                                    FillRule="NonZero" />
+                                            </Path.Data>
+                                        </Path>
+                                    </Canvas>
+                                    <Canvas
+                                        Name="g212">
+                                        <Canvas
+                                            Name="g214" />
+                                        <Canvas
+                                            Name="g252">
+                                            <Canvas
+                                                Name="g250"
+                                                Clip="{StaticResource clipPath218}">
+                                                <Canvas
+                                                    Name="g248">
+                                                    <Canvas
+                                                        Name="g240" />
+                                                    <Canvas
+                                                        Name="g246">
+                                                        <Canvas
+                                                            Name="g244">
+                                                            <Canvas.RenderTransform>
+                                                                <MatrixTransform
+                                                                    Matrix="192 0 0 54 29 183.43478" />
+                                                            </Canvas.RenderTransform>
+                                                            <Image
+                                                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                                                Name="image242"
+                                                                Source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAA2CAYAAACRF5YDAAAABHNCSVQICAgIfAhkiAAAAR5JREFUeJzt3cFOwlAURdFXwv//8nMEQS2kBaPSvdYUMQzO7pWRy5xzDog6v/LmZVl+6nPA0155hu8OwOj5b243uTeGzQEYPu/gstOtIZz2/FJ4F1s3+/ACGD7vbMs1uHsBjJ+jeLTl1QCMn6O5t+lvARg/R7W27U1fguGoPgXg6c/Rfd24C0DaNQBPfyput+4CkCYA0k5j+POHnsvmXQDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSTmOMMef8688Bv+qyeReAtGsArgAVt1s/r73gn+ZxRGsP+fPKz7kGZHwA1lUllXO8+ugAAAAASUVORK5CYII="
+                                                                Width="1"
+                                                                Height="1"
+                                                                Stretch="Fill">
+                                                                <Image.RenderTransform>
+                                                                    <MatrixTransform
+                                                                        Matrix="1 0 0 -1 0 1" />
+                                                                </Image.RenderTransform>
+                                                            </Image>
+                                                        </Canvas>
+                                                    </Canvas>
+                                                </Canvas>
+                                            </Canvas>
+                                        </Canvas>
+                                    </Canvas>
+                                    <Canvas
+                                        Name="g254">
+                                        <Canvas.RenderTransform>
+                                            <TranslateTransform
+                                                X="94.6841"
+                                                Y="194" />
+                                        </Canvas.RenderTransform>
+                                        <Path
+                                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                            Name="path256"
+                                            Fill="#FF828282">
+                                            <Path.Data>
+                                                <PathGeometry
+                                                    Figures="m 0 0 h -59.684 v 25.987 c 0 8.285 6.716 15 15 15 l 44.684 0 z"
+                                                    FillRule="NonZero" />
+                                            </Path.Data>
+                                        </Path>
+                                    </Canvas>
+                                    <Canvas
+                                        Name="g258">
+                                        <Canvas.RenderTransform>
+                                            <TranslateTransform
+                                                X="215"
+                                                Y="194.0127" />
+                                        </Canvas.RenderTransform>
+                                        <Path
+                                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                            Name="path260"
+                                            Fill="#FFCDCDCD">
+                                            <Path.Data>
+                                                <PathGeometry
+                                                    Figures="M 0 0 H -59.684 V 40.987 H -15 c 8.284 0 15 -6.715 15 -15 z"
+                                                    FillRule="NonZero" />
+                                            </Path.Data>
+                                        </Path>
+                                    </Canvas>
+                                    <Path
+                                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                        Name="path262"
+                                        Fill="#FF9B9B9B">
+                                        <Path.Data>
+                                            <PathGeometry
+                                                Figures="M 155.316 194.013 H 94.684 V 235 h 60.632 z"
+                                                FillRule="NonZero" />
+                                        </Path.Data>
+                                    </Path>
+                                </Canvas>
+                            </Canvas>
+                        </Canvas>
+                    </Canvas>
+                </Viewbox>
+                <StackPanel
+                    VerticalAlignment="Center">
+                    <TextBlock
+                        FontSize="24"
+                        FontWeight="Bold"
+                        HorizontalAlignment="Center"
+                        Text="简兮编辑器" />
+                    <TextBlock
+                        Margin="5,10,5,5"
+                        FontSize="16"
+                        Text="版本 1.2.0" />
+                    <TextBlock
+                        Margin="5"
+                        FontSize="16"
+                        Text="编译版本 Build 118" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</hc:Window>

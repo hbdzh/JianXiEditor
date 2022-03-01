@@ -1,0 +1,80 @@
+﻿<hc:Window
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    x:Class="JianXiEditor.View.FilePathWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:JianXiEditor.View"
+    mc:Ignorable="d"
+    DataContext="{StaticResource ShareFilePathViewModel}"
+    Name="FPWindow"
+    Title="文件路径"
+    Height="auto"
+    Width="250"
+    SizeToContent="Height"
+    Background="{DynamicResource MainContentBackgroundBrush}"
+    BorderThickness="0"
+    ShowTitle="False"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner"
+    ShowNonClientArea="False">
+    <hc:Interaction.Triggers>
+        <hc:EventTrigger
+            EventName="Closing">
+            <hc:InvokeCommandAction
+                Command="{Binding ClosingCommand}" />
+        </hc:EventTrigger>
+    </hc:Interaction.Triggers>
+    <DockPanel>
+        <hc:SimplePanel
+            DockPanel.Dock="Top"
+            Height="38">
+            <Border
+                SnapsToDevicePixels="True"
+                BorderBrush="{DynamicResource MainShadow}"
+                BorderThickness="0,0,0,1.2">
+                <Border.Effect>
+                    <DropShadowEffect
+                        Color="{DynamicResource MainEffect}"
+                        BlurRadius="10"
+                        ShadowDepth="0"
+                        Opacity="1" />
+                </Border.Effect>
+            </Border>
+            <Border
+                Background="{DynamicResource MainContentBackgroundBrush}"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                hc:WindowAttach.IsDragElement="True" />
+            <TextBlock
+                Text="重命名"
+                FontSize="18"
+                Margin="10,0,0,0"
+                hc:WindowAttach.IsDragElement="True"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left" />
+            <Button
+                ToolTip="关闭"
+                HorizontalAlignment="Right"
+                FontFamily="{StaticResource IconFont}"
+                Style="{StaticResource ControlButton}"
+                Command="hc:ControlCommands.CloseWindow"
+                CommandParameter="{Binding RelativeSource={RelativeSource Self}}" />
+        </hc:SimplePanel>
+        <StackPanel
+            Margin="30,30,30,20">
+            <hc:TextBox
+                ShowClearButton="True"
+                Text="{Binding FilePath.FileName}"
+                hc:TitleElement.Title="文件名"
+                hc:TitleElement.TitlePlacement="Left" />
+            <Button
+                Margin="0,20,0,0"
+                Content="打开所在文件夹"
+                Command="{Binding OpenFileFolderCommand}"
+                Style="{StaticResource ButtonPrimary}" />
+        </StackPanel>
+    </DockPanel>
+</hc:Window>

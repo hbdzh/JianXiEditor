@@ -1,0 +1,272 @@
+﻿<hc:Window
+    x:Class="JianXiEditor.View.SettingWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:JianXiEditor.View"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    mc:Ignorable="d"
+    Name="SetWindow"
+    Title="设置"
+    DataContext="{StaticResource ShareMainViewModel}"
+    Height="380"
+    Width="300"
+    Background="{DynamicResource MainContentBackgroundBrush}"
+    BorderThickness="0"
+    ShowTitle="False"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner"
+    ShowNonClientArea="False">
+    <DockPanel>
+        <hc:SimplePanel
+            DockPanel.Dock="Top"
+            Height="38">
+            <Border
+                SnapsToDevicePixels="True"
+                BorderBrush="{DynamicResource MainShadow}"
+                BorderThickness="0,0,0,1.2">
+                <Border.Effect>
+                    <DropShadowEffect
+                        Color="{DynamicResource MainEffect}"
+                        BlurRadius="10"
+                        ShadowDepth="0"
+                        Opacity="1" />
+                </Border.Effect>
+            </Border>
+            <Border
+                Background="{DynamicResource MainContentBackgroundBrush}"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                hc:WindowAttach.IsDragElement="True" />
+            <TextBlock
+                Text="设置"
+                FontSize="18"
+                Margin="10,0,0,0"
+                hc:WindowAttach.IsDragElement="True"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left" />
+            <Button
+                ToolTip="关闭"
+                HorizontalAlignment="Right"
+                DataContext="{StaticResource ShareSettingViewModel}"
+                FontFamily="{StaticResource IconFont}"
+                Style="{StaticResource ControlButton}"
+                Command="hc:ControlCommands.CloseWindow"
+                CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+                <hc:Interaction.Triggers>
+                    <hc:EventTrigger
+                        EventName="Click">
+                        <hc:InvokeCommandAction
+                            Command="{Binding ClosingCommand}" />
+                    </hc:EventTrigger>
+                </hc:Interaction.Triggers>
+            </Button>
+        </hc:SimplePanel>
+        <ScrollViewer
+            DockPanel.Dock="Bottom">
+            <StackPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="10">
+                <WrapPanel>
+                    <ComboBox
+                        Margin="10,0,10,0"
+                        Width="100"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        hc:DropDownElement.ConsistentWidth="False"
+                        hc:TitleElement.Title="主题"
+                        hc:TitleElement.TitlePlacement="Top"
+                        ItemsSource="{Binding Setting.AppThemeList}"
+                        SelectedItem="{Binding Setting.SelectAppTheme}"
+                        Style="{StaticResource ComboBoxExtend}" />
+                    <ComboBox
+                        Margin="10"
+                        Width="100"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        hc:DropDownElement.ConsistentWidth="False"
+                        hc:TitleElement.Title="编辑器位置"
+                        hc:TitleElement.TitlePlacement="Top"
+                        ItemsSource="{Binding Setting.EditorLocationList}"
+                        SelectedItem="{Binding Setting.SelectEditorLocation}"
+                        Style="{StaticResource ComboBoxExtend}" />
+                </WrapPanel>
+                <WrapPanel>
+                    <ComboBox
+                        Margin="10,0,10,0"
+                        Width="100"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        hc:DropDownElement.ConsistentWidth="False"
+                        hc:TitleElement.Title="字体"
+                        hc:TitleElement.TitlePlacement="Top"
+                        ItemsSource="{Binding Setting.FontList,UpdateSourceTrigger=PropertyChanged}"
+                        SelectedItem="{Binding Setting.SelectFont,UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource ComboBoxExtend}" />
+                    <ComboBox
+                        Margin="10,0,10,0"
+                        Width="100"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        hc:DropDownElement.ConsistentWidth="False"
+                        hc:TitleElement.Title="字体大小"
+                        hc:TitleElement.TitlePlacement="Top"
+                        ItemsSource="{Binding Editor.FontSizeList}"
+                        SelectedItem="{Binding Editor.SelelctFontSize}"
+                        Style="{StaticResource ComboBoxExtend}" />
+                </WrapPanel>
+                <WrapPanel>
+                    <ComboBox
+                        Margin="10"
+                        Width="100"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        hc:DropDownElement.ConsistentWidth="False"
+                        hc:TitleElement.Title="行距"
+                        hc:TitleElement.TitlePlacement="Top"
+                        ItemsSource="{Binding Setting.LineHeightList}"
+                        SelectedItem="{Binding Setting.SelectLineHeight}"
+                        Style="{StaticResource ComboBoxExtend}" />
+                    <hc:NumericUpDown
+                        ShowClearButton="True"
+                        hc:InfoElement.Title="缩进宽度"
+                        Margin="10"
+                        Width="100"
+                        Minimum="0"
+                        Value="{Binding Editor.TextOptions.IndentationSize}"
+                        Style="{StaticResource NumericUpDownPlus}" />
+                </WrapPanel>
+                <WrapPanel>
+                    <hc:NumericUpDown
+                        ShowClearButton="True"
+                        hc:InfoElement.Title="标尺位置"
+                        Margin="10"
+                        Width="100"
+                        Minimum="0"
+                        Value="{Binding Editor.TextOptions.ColumnRulerPosition}"
+                        Style="{StaticResource NumericUpDownPlus}" />
+                </WrapPanel>
+                <hc:ButtonGroup
+                    Margin="10"
+                    Orientation="Vertical"
+                    Style="{StaticResource ButtonGroupSolid}">
+                    <ToggleButton
+                        Content="标签自动闭合"
+                        ToolTip="部分标签输入左半部分后，会自动插入右半部分"
+                        IsChecked="{Binding Setting.TagAutoClose}" />
+                    <ToggleButton
+                        Content="自动保存文件"
+                        ToolTip="每隔三分钟保存一次文件，如果文件没有保存过，会进行提示"
+                        IsChecked="{Binding Setting.AutoSaveFile}" />
+                    <ToggleButton
+                        Content="高亮显示相同单词"
+                        IsChecked="{Binding Setting.HighlightSameWord}" />
+                </hc:ButtonGroup>
+                <hc:ButtonGroup
+                    Margin="10"
+                    Orientation="Vertical"
+                    Style="{StaticResource ButtonGroupSolid}">
+                    <ToggleButton
+                        Content="快速移动行"
+                        ToolTip="关闭时按Alt+Up/Down，可以上下快速选择行，开启时可以上下移动行"
+                        IsChecked="{Binding Setting.FastMoveLine}" />
+                    <ToggleButton
+                        Content="快速移动文字"
+                        ToolTip="关闭时按Alt+Left/Right，可以左右快速选择文字，开启时可以左右移动文字"
+                        IsChecked="{Binding Setting.FastMoveText}" />
+                    <ToggleButton
+                        Content="快速复制当前行"
+                        ToolTip="当光标处在行尾时，双击可以复制当前行的内容"
+                        IsChecked="{Binding Setting.QuickCopyLine}" />
+                </hc:ButtonGroup>
+                <hc:ButtonGroup
+                    Margin="10"
+                    Orientation="Vertical"
+                    Style="{StaticResource ButtonGroupSolid}">
+                    <ToggleButton
+                        Content="自动更新"
+                        ToolTip="程序每次运行时都会检查是否有新版本"
+                        IsChecked="{Binding Setting.AutoUpdate}" />
+                    <ToggleButton
+                        Content="文件缓存"
+                        ToolTip="软件关闭时会自动保存文件内容，当软件再次打开时，直接打开该文件"
+                        IsChecked="{Binding Setting.FileCache}" />
+                    <ToggleButton
+                        Content="实时显示文件状态"
+                        ToolTip="文件过大时开启此选项，可能会导致输入内容时出现卡顿&#13;但关闭后文件保存状态可能不那么准确"
+                        IsChecked="{Binding Setting.RealDisplayState}" />
+                </hc:ButtonGroup>
+                <hc:ButtonGroup
+                    Margin="10"
+                    Orientation="Vertical"
+                    Style="{StaticResource ButtonGroupSolid}">
+                    <ToggleButton
+                        Content="自动换行"
+                        IsChecked="{Binding Editor.WordWrap}" />
+                    <ToggleButton
+                        Content="显示行号"
+                        IsChecked="{Binding Editor.ShowLineNumbers}" />
+                </hc:ButtonGroup>
+                <hc:ButtonGroup
+                    Margin="10"
+                    Orientation="Vertical"
+                    Style="{StaticResource ButtonGroupSolid}">
+                    <ToggleButton
+                        Content="显示空格"
+                        IsChecked="{Binding Editor.TextOptions.ShowSpaces}" />
+                    <ToggleButton
+                        Content="虚拟空格"
+                        IsChecked="{Binding Editor.TextOptions.EnableVirtualSpace}" />
+                    <ToggleButton
+                        Content="复制整行"
+                        IsChecked="{Binding Editor.TextOptions.CutCopyWholeLine}" />
+                </hc:ButtonGroup>
+                <hc:ButtonGroup
+                    Margin="10"
+                    Orientation="Vertical"
+                    Style="{StaticResource ButtonGroupSolid}">
+                    <ToggleButton
+                        Content="显示标尺"
+                        IsChecked="{Binding Editor.TextOptions.ShowColumnRuler}" />
+                    <ToggleButton
+                        Content="显示换行符"
+                        IsChecked="{Binding Editor.TextOptions.ShowEndOfLine}" />
+                    <ToggleButton
+                        Content="输入时隐藏光标"
+                        IsChecked="{Binding Editor.TextOptions.HideCursorWhileTyping}" />
+                </hc:ButtonGroup>
+                <hc:ButtonGroup
+                    Margin="10"
+                    Orientation="Vertical"
+                    Style="{StaticResource ButtonGroupSolid}">
+                    <ToggleButton
+                        Content="显示缩进符"
+                        IsChecked="{Binding Editor.TextOptions.ShowTabs}" />
+                    <ToggleButton
+                        Content="Tab转为空格"
+                        IsChecked="{Binding Editor.TextOptions.ConvertTabsToSpaces}" />
+                    <ToggleButton
+                        Content="允许底部滚动"
+                        IsChecked="{Binding Editor.TextOptions.AllowScrollBelowDocument}" />
+                </hc:ButtonGroup>
+                <hc:ButtonGroup
+                    Margin="10"
+                    Orientation="Vertical"
+                    Style="{StaticResource ButtonGroupSolid}">
+                    <ToggleButton
+                        Content="链接允许点击"
+                        IsChecked="{Binding Editor.TextOptions.EnableHyperlinks}" />
+                    <ToggleButton
+                        Content="高亮鼠标所在行"
+                        IsChecked="{Binding Editor.TextOptions.HighlightCurrentLine}" />
+                    <ToggleButton
+                        Content="邮箱显示为链接"
+                        IsChecked="{Binding Editor.TextOptions.EnableEmailHyperlinks}" />
+                </hc:ButtonGroup>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</hc:Window>

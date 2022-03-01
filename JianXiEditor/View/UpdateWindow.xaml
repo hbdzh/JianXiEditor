@@ -1,0 +1,108 @@
+﻿<hc:Window
+    x:Class="JianXiEditor.View.UpdateWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:JianXiEditor.View"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    mc:Ignorable="d"
+    Name="UpdWindow"
+    DataContext="{StaticResource ShareUpdateViewModel}"
+    Title="检测到新版本，是否更新？"
+    Height="400"
+    Width="350"
+    Background="{DynamicResource MainContentBackgroundBrush}"
+    BorderThickness="0"
+    ShowTitle="False"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner"
+    ShowNonClientArea="False">
+    <hc:Interaction.Triggers>
+        <hc:EventTrigger
+            EventName="Loaded">
+            <hc:InvokeCommandAction
+                Command="{Binding UpdateWindowLoadCommand}"/>
+        </hc:EventTrigger>
+    </hc:Interaction.Triggers>
+    <DockPanel>
+        <hc:SimplePanel
+            DockPanel.Dock="Top"
+            Height="38">
+            <Border
+                SnapsToDevicePixels="True"
+                BorderBrush="{DynamicResource MainShadow}"
+                BorderThickness="0,0,0,1.2">
+                <Border.Effect>
+                    <DropShadowEffect
+                        Color="{DynamicResource MainEffect}"
+                        BlurRadius="10"
+                        ShadowDepth="0"
+                        Opacity="1" />
+                </Border.Effect>
+            </Border>
+            <Border
+                Background="{DynamicResource MainContentBackgroundBrush}"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                hc:WindowAttach.IsDragElement="True" />
+            <TextBlock
+                Text="检测到新版本，是否更新？"
+                FontSize="18"
+                Margin="10,0,0,0"
+                hc:WindowAttach.IsDragElement="True"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left" />
+        </hc:SimplePanel>
+        <StackPanel
+            Margin="20,0,20,20"
+            DockPanel.Dock="Bottom"
+            VerticalAlignment="Bottom">
+            <ProgressBar
+                Name="UpdateProgress"
+                Margin="0,10"
+                Height="20"
+                Minimum="0"
+                Maximum="{Binding UpdateVM.ProgressMaximum}"
+                Value="{Binding UpdateVM.UpdateProgress}" />
+            <WrapPanel
+                HorizontalAlignment="Center">
+                <Button
+                    Content="是"
+                    Width="80"
+                    Height="38"
+                    IsDefault="True"
+                    Command="{Binding UpdateConfirmCommand}"
+                    CommandParameter="{Binding ElementName=UpdWindow}" />
+                <Button
+                    Content="否"
+                    Width="80"
+                    Height="38"
+                    Command="{Binding UpdateCancelCommand}"
+                    CommandParameter="{Binding ElementName=UpdWindow}" />
+            </WrapPanel>
+        </StackPanel>
+        <ScrollViewer>
+            <StackPanel
+                Margin="20,10,20,0">
+                <TextBox
+                    Text="{Binding UpdateVM.CurrentVersion}"
+                    hc:InfoElement.Title="当前版本"
+                    Style="{StaticResource TextBoxExtend}"
+                    IsReadOnly="True" />
+                <TextBox
+                    Text="{Binding UpdateVM.LatestVersion}"
+                    hc:InfoElement.Title="最新版本"
+                    Style="{StaticResource TextBoxExtend}"
+                    IsReadOnly="True" />
+                <TextBox
+                    Text="{Binding UpdateVM.UpdateContent}"
+                    hc:InfoElement.Title="更新内容"
+                    TextOptions.TextRenderingMode="Auto"
+                    Style="{StaticResource TextBoxExtend}"
+                    IsReadOnly="True" />
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</hc:Window>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31612.314
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JianXiEditor", "JianXiEditor\JianXiEditor.csproj", "{2EB5AC2C-8699-4108-A65A-121AE047C740}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6A14692D-F120-4EF8-8EC0-EF16082EC6F8} = {6A14692D-F120-4EF8-8EC0-EF16082EC6F8}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICSharpCode.AvalonEdit", "ICSharpCode.AvalonEdit\ICSharpCode.AvalonEdit.csproj", "{6A14692D-F120-4EF8-8EC0-EF16082EC6F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EB5AC2C-8699-4108-A65A-121AE047C740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EB5AC2C-8699-4108-A65A-121AE047C740}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EB5AC2C-8699-4108-A65A-121AE047C740}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EB5AC2C-8699-4108-A65A-121AE047C740}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A14692D-F120-4EF8-8EC0-EF16082EC6F8}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{6A14692D-F120-4EF8-8EC0-EF16082EC6F8}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{6A14692D-F120-4EF8-8EC0-EF16082EC6F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A14692D-F120-4EF8-8EC0-EF16082EC6F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {229A6816-0FAD-46D8-906D-7EB4CA86D797}
+	EndGlobalSection
+EndGlobal

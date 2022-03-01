@@ -1,0 +1,84 @@
+﻿<hc:Window
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    x:Class="JianXiEditor.View.ShortcutKeyWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:JianXiEditor.View"
+    mc:Ignorable="d"
+    DataContext="{StaticResource ShareShortcutKeyViewModel}"
+    Name="SKWindow"
+    Title="快捷键"
+    Height="auto"
+    MinHeight="250"
+    MaxHeight="600"
+    MinWidth="230"
+    SizeToContent="WidthAndHeight"
+    Background="{DynamicResource MainContentBackgroundBrush}"
+    BorderThickness="0"
+    ShowTitle="False"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner"
+    ShowNonClientArea="False">
+    <hc:Interaction.Triggers>
+        <hc:EventTrigger
+            EventName="Loaded">
+            <hc:InvokeCommandAction
+                Command="{Binding ShortcutKeyLoadedCommand}" />
+        </hc:EventTrigger>
+    </hc:Interaction.Triggers>
+    <DockPanel>
+        <hc:SimplePanel
+            DockPanel.Dock="Top"
+            Height="38">
+            <Border
+                SnapsToDevicePixels="True"
+                BorderBrush="{DynamicResource MainShadow}"
+                BorderThickness="0,0,0,1.2">
+                <Border.Effect>
+                    <DropShadowEffect
+                        Color="{DynamicResource MainEffect}"
+                        BlurRadius="10"
+                        ShadowDepth="0"
+                        Opacity="1" />
+                </Border.Effect>
+            </Border>
+            <Border
+                Background="{DynamicResource MainContentBackgroundBrush}"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                hc:WindowAttach.IsDragElement="True" />
+            <TextBlock
+                Text="快捷键"
+                FontSize="18"
+                Margin="10,0,0,0"
+                hc:WindowAttach.IsDragElement="True"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left" />
+            <Button
+                ToolTip="关闭"
+                HorizontalAlignment="Right"
+                FontFamily="{StaticResource IconFont}"
+                Style="{StaticResource ControlButton}"
+                Command="hc:ControlCommands.CloseWindow"
+                CommandParameter="{Binding RelativeSource={RelativeSource Self}}" />
+        </hc:SimplePanel>
+        <ListView
+            ItemsSource="{Binding ShortcutKeys.ShortcutKeyList}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+                        Width="150"
+                        Header="快捷键"
+                        DisplayMemberBinding="{Binding ShortcutKey}" />
+                    <GridViewColumn
+                        Width="200"
+                        Header="说明"
+                        DisplayMemberBinding="{Binding FunExplain}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
+</hc:Window>

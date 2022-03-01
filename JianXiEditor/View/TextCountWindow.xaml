@@ -1,0 +1,123 @@
+﻿<hc:Window
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    x:Class="JianXiEditor.View.TextCountWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:JianXiEditor.View"
+    mc:Ignorable="d"
+    DataContext="{StaticResource ShareTextCountViewModel}"
+    Name="TCWindow"
+    Title="字数统计"
+    Height="auto"
+    MinWidth="200"
+    SizeToContent="WidthAndHeight"
+    Background="{DynamicResource MainContentBackgroundBrush}"
+    BorderThickness="0"
+    ShowTitle="False"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner"
+    ShowNonClientArea="False">
+    <hc:Interaction.Triggers>
+        <hc:EventTrigger
+            EventName="Loaded">
+            <hc:InvokeCommandAction
+                Command="{Binding TextCountLoadedCommand}" />
+        </hc:EventTrigger>
+        <hc:EventTrigger
+            EventName="Deactivated">
+            <hc:InvokeCommandAction
+                Command="{Binding TextCountDeactivatedCommand}" />
+        </hc:EventTrigger>
+    </hc:Interaction.Triggers>
+    <DockPanel>
+        <hc:SimplePanel
+            DockPanel.Dock="Top"
+            Height="38">
+            <Border
+                SnapsToDevicePixels="True"
+                BorderBrush="{DynamicResource MainShadow}"
+                BorderThickness="0,0,0,1.2">
+                <Border.Effect>
+                    <DropShadowEffect
+                        Color="{DynamicResource MainEffect}"
+                        BlurRadius="10"
+                        ShadowDepth="0"
+                        Opacity="1" />
+                </Border.Effect>
+            </Border>
+            <Border
+                Background="{DynamicResource MainContentBackgroundBrush}"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                hc:WindowAttach.IsDragElement="True" />
+            <TextBlock
+                Text="字数统计"
+                FontSize="18"
+                Margin="10,0,0,0"
+                hc:WindowAttach.IsDragElement="True"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left" />
+            <Button
+                ToolTip="关闭"
+                HorizontalAlignment="Right"
+                FontFamily="{StaticResource IconFont}"
+                Style="{StaticResource ControlButton}"
+                Command="hc:ControlCommands.CloseWindow"
+                CommandParameter="{Binding RelativeSource={RelativeSource Self}}" />
+        </hc:SimplePanel>
+        <StackPanel
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Margin="30,17">
+            <TextBlock
+                Margin="0,3"
+                FontSize="14">
+            <Run
+                    Text="总字数：" />
+            <Run
+                    Text="{Binding TextCountM.TotalWord}" /></TextBlock>
+            <TextBlock
+                Margin="0,3"
+                FontSize="14">
+            <Run
+                    Text="字节数：" />
+            <Run
+                    Text="{Binding TextCountM.ByteCount}" /></TextBlock>
+            <TextBlock
+                Margin="0,3"
+                FontSize="14">
+            <Run
+                    Text="汉字数量：" />
+            <Run
+                    Text="{Binding TextCountM.ChineseCount}" /></TextBlock>
+            <TextBlock
+                Margin="0,3"
+                FontSize="14">
+            <Run
+                    Text="数字数量：" />
+            <Run
+                    Text="{Binding TextCountM.NumberCount}" /></TextBlock>
+            <TextBlock
+                Margin="0,3"
+                FontSize="14">
+            <Run
+                    Text="字母数量：" />
+            <Run
+                    Text="{Binding TextCountM.LetterCount}" /></TextBlock>
+            <TextBlock
+                Margin="0,3"
+                FontSize="14">
+            <Run
+                    Text="符号数量：" />
+            <Run
+                    Text="{Binding TextCountM.SymbolCount}" /></TextBlock>
+            <TextBlock
+                Margin="0,10,0,3"
+                FontSize="13"
+                Text="注：总字数和字节数没有统计空格和换行" />
+        </StackPanel>
+    </DockPanel>
+</hc:Window>

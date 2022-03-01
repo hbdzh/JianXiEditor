@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Sin" extensions=".sin" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+	<Color name="Tag1" foreground="Brown" exampleText="var text = &quot;Hello, World!&quot;;" />
+	<Color name="Tag2" foreground="Brown" exampleText="var text = &quot;Hello, World!&quot;;" />
+	<Color name="value" foreground="Blue" fontweight="bold" exampleText="return myVariable;" />
+
+	<RuleSet ignoreCase="false">
+		<Keywords color="Tag1">
+			<Word>[</Word>
+		</Keywords>
+		<Keywords color="Tag2">
+			<Word>]</Word>
+		</Keywords>
+
+		<Keywords color="value">
+			<Word>;</Word>
+		</Keywords>
+	</RuleSet>
+</SyntaxDefinition>
