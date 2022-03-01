@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="128" align="center" src="Images/logo.png">
+  <img width="256" align="center" src="Images/logo.png">
 </p>
 <h1 align="center">
   简兮编辑器
@@ -18,6 +18,7 @@
     <img src="Images/technology.svg" alt="Technology" />
   </a>
 </p>
+
 
 
 ## 功能特色
