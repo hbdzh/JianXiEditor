@@ -342,7 +342,7 @@ namespace JianXiEditor.ViewModel
                 {
                     if (textEditor.Document.TextLength > 0 && Setting.QuickCopyLine == true)
                     {
-                        new LineHandle().CopyLineContent(textEditor);
+                        new LineHandle().CopyLineContent(textEditor);//复制当前行
                         HandyControl.Controls.Growl.Success("复制成功！");
                     }
                 }
@@ -488,6 +488,58 @@ namespace JianXiEditor.ViewModel
                 //记录错误日志
                 Logger.Log(ex);
                 HandyControl.Controls.Growl.Warning("跳转到下一个内容时出现异常，已将异常原因记录到如下目录：" + Environment.NewLine + Config_Temp.AppDataPath_Log);
+            }
+        });
+        /// <summary>
+        /// 移除所有换行符
+        /// </summary>
+        public RelayCommand RemoveAllLineBreakCommand => new RelayCommand(obj =>
+        {
+            try
+            {
+                string lineBreak = null;
+                switch (main.FileLineBreak)
+                {
+                    case "CRLF":
+                        lineBreak = "\r\n";
+                        break;
+                    case "LF":
+                        lineBreak = "\n";
+                        break;
+                    case "CR":
+                        lineBreak = "\r";
+                        break;
+                }
+                string oldText = textEditor.Text;
+                textEditor.Text = oldText.Replace(lineBreak, "");
+            }
+            catch (Exception ex)
+            {
+                //记录错误日志
+                Logger.Log(ex);
+                HandyControl.Controls.Growl.Warning("移除换行符时出现错误，已将异常原因记录到如下目录：" + Environment.NewLine + Config_Temp.AppDataPath_Log);
+            }
+        });
+        /// <summary>
+        /// 按下Alt+C会复制当前行
+        /// </summary>
+        public RelayCommand NoSelectedCopyCommand => new RelayCommand(obj =>
+        {
+            try
+            {
+                if (textEditor.SelectionLength == 0)
+                {
+                    int currentLineNumber = textEditor.TextArea.Caret.Line;//获取当前行位置
+                    int currentLineOffset = textEditor.Document.GetLineByNumber(currentLineNumber).Offset;//获取当前行的起始位置
+                    int currentLineLength = textEditor.Document.GetLineByNumber(currentLineNumber).Length;//获取当前行的长度
+                    Clipboard.SetText(textEditor.Document.GetText(currentLineOffset, currentLineLength));
+                }
+            }
+            catch (Exception ex)
+            {
+                //记录错误日志
+                Logger.Log(ex);
+                HandyControl.Controls.Growl.Warning("快速复制时出现错误，已将异常原因记录到如下目录：" + Environment.NewLine + Config_Temp.AppDataPath_Log);
             }
         });
         /// <summary>

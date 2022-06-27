@@ -15,7 +15,7 @@ namespace JianXiEditor.View
             ApplicationHelper.StartProfileOptimization(Config_Temp.AppDataPath);//开启JIT即时编译
             //去掉系统菜单
             SystemMenuHandle removeSystemMenu = new SystemMenuHandle(this);
-            SourceInitialized += removeSystemMenu.OnSourceInitialized; 
+            SourceInitialized += removeSystemMenu.OnSourceInitialized;
         }
     }
 }

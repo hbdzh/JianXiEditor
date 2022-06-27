@@ -79,7 +79,7 @@ namespace JianXiEditor.Service
             {
                 //记录错误日志
                 HandyControl.Tools.Logger.Log(ex);
-                HandyControl.Controls.Growl.Warning("下载最新安装包时出现异常，已将异常原因记录到如下目录：" + Environment.NewLine + Config_Temp.AppDataPath_Log);
+                HandyControl.Controls.Growl.Warning("下载最新版本信息时出现异常，已将异常原因记录到如下目录：" + Environment.NewLine + Config_Temp.AppDataPath_Log);
                 return false;
             }
         }

@@ -485,11 +485,11 @@
                     <TextBlock
                         Margin="5,10,5,5"
                         FontSize="16"
-                        Text="版本 1.2.0" />
+                        Text="版本 1.2.1" />
                     <TextBlock
                         Margin="5"
                         FontSize="16"
-                        Text="编译版本 Build 118" />
+                        Text="编译版本 Build 119" />
                 </StackPanel>
             </StackPanel>
         </StackPanel>

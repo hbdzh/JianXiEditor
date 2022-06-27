@@ -176,12 +176,12 @@ namespace JianXiEditor.Service.EditorPlus
             }
             if (currentLineNumber > 1 && currentLineNumber != textEditor.LineCount && currentLineNumber != textEditor.LineCount - 1)//如果当前行不是第一行并且不是最后一行
             {
-                int currentLineOffset = textEditor.Document.GetLineByNumber(currentLineNumber).Offset - lineBreakLength;//获取当前行的起始位置
-                int currentLineLength = textEditor.Document.GetLineByNumber(currentLineNumber).Length + lineBreakLength;//获取当前行的长度
+                int currentLineOffset = textEditor.Document.GetLineByNumber(currentLineNumber).Offset;//获取当前行的起始位置
                 int nextLineOffset = textEditor.Document.GetLineByNumber(nextLineNumber).Offset;//获取下一行的起始位置
-                string currentLineContent = textEditor.Document.GetText(currentLineOffset + lineBreakLength, currentLineLength);//获取当前行内容
-                textEditor.Document.Remove(currentLineOffset, currentLineLength);
-                textEditor.Document.Insert(nextLineOffset, currentLineContent);
+                int nextLineLength = textEditor.Document.GetLineByNumber(nextLineNumber).Length + lineBreakLength;//获取下一行的长度
+                string nextLineContent = textEditor.Document.GetText(nextLineOffset, nextLineLength);//获取下一行内容
+                textEditor.Document.Remove(nextLineOffset, nextLineLength);
+                textEditor.Document.Insert(currentLineOffset, nextLineContent);
                 return;
             }
             else if (currentLineNumber == 1)//如果当前行是第一行

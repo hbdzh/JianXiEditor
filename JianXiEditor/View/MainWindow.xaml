@@ -319,10 +319,12 @@
                 <avalonedit:TextEditor.InputBindings>
                     <KeyBinding
                         Gesture="Alt+Left"
-                        Command="{Binding QuickTextCommand}" />
+                        Command="{Binding QuickTextCommand}"
+                        CommandParameter="Left" />
                     <KeyBinding
                         Gesture="Alt+Right"
-                        Command="{Binding QuickTextCommand}" />
+                        Command="{Binding QuickTextCommand}"
+                        CommandParameter="Right" />
                     <KeyBinding
                         Gesture="Alt+Up"
                         Command="{Binding QuickLineCommand}"
@@ -335,7 +337,7 @@
                         Gesture="CTRL+K"
                         Command="{Binding CodeAnnotationCommand}" />
                     <KeyBinding
-                        Gesture="CTRL+L"
+                        Gesture="Alt+V"
                         Command="{Binding CurrentLineInsertNextLineCommand}" />
                     <KeyBinding
                         Gesture="CTRL+Shift+C"
@@ -346,6 +348,12 @@
                     <KeyBinding
                         Gesture="Alt+F"
                         Command="{Binding ToNextContentCommand}" />
+                    <KeyBinding
+                        Gesture="Ctrl+Shift+D"
+                        Command="{Binding RemoveAllLineBreakCommand}" />
+                    <KeyBinding
+                        Gesture="Alt+C"
+                        Command="{Binding NoSelectedCopyCommand}" />
                 </avalonedit:TextEditor.InputBindings>
                 <hc:Interaction.Triggers>
                     <hc:EventTrigger
