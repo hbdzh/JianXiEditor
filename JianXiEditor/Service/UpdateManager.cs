@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
-
 namespace JianXiEditor.Service
 {
     class UpdateManager

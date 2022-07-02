@@ -64,8 +64,10 @@
 * Alt+Up：向上选择/移动行
 * Alt+Down：向下选择/移动行
 * Ctrl+D：删除当前行
-* Ctrl+L：当前行插入下一行
+* Alt+C：复制当前行
+* Alt+V：当前行插入下一行
 * Ctrl+Shift+C：复制整个文档
+* Ctrl+Shift+D：移除所有换行符
 * Ctrl+Shift+X：剪切并删除行
 * Alt+F：跳转到相同内容
 * Alt+MouseLeft：块选择

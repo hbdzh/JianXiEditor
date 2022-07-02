@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
-    <Version>1.2.0.118</Version>
+    <Version>1.2.1.119</Version>
     <AssemblyName>简兮编辑器</AssemblyName>
     <ApplicationIcon>logo.ico</ApplicationIcon>
     <PackageProjectUrl></PackageProjectUrl>

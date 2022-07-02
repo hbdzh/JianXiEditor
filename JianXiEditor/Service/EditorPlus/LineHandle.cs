@@ -9,7 +9,8 @@ namespace JianXiEditor.Service.EditorPlus
         /// 双击复制当前行内容
         /// </summary>
         /// <param name="textEditor">编辑器</param>
-        public void CopyLineContent(TextEditor textEditor)
+        /// <returns>true复制，false无需复制</returns>
+        public bool CopyLineContent(TextEditor textEditor)
         {
             int currentOffset = textEditor.TextArea.Caret.Offset;//获取当前光标位置
             int currentNumber = textEditor.TextArea.Caret.Line;//获取当前行位置
@@ -18,6 +19,11 @@ namespace JianXiEditor.Service.EditorPlus
             if (currentOffset == (currentLineLength + currentLineOffset))//如果一样，则代表光标在行的最后
             {
                 Clipboard.SetText(textEditor.Document.GetText(currentLineOffset, currentLineLength));
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
         /// <summary>

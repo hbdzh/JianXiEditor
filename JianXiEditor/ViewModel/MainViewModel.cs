@@ -342,8 +342,11 @@ namespace JianXiEditor.ViewModel
                 {
                     if (textEditor.Document.TextLength > 0 && Setting.QuickCopyLine == true)
                     {
-                        new LineHandle().CopyLineContent(textEditor);//复制当前行
-                        HandyControl.Controls.Growl.Success("复制成功！");
+                        bool isCopy = new LineHandle().CopyLineContent(textEditor);//复制当前行
+                        if (isCopy == true)
+                        {
+                            HandyControl.Controls.Growl.Success("复制成功！");
+                        }
                     }
                 }
             }
